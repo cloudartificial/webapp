@@ -1,6 +1,6 @@
 {
   "name": "vite-project",
-  "homepage": "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO-NAME",
+  "homepage": "https://cloudartificial.github.io/webapp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
