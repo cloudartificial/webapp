@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Replace 'YOUR-REPO-NAME' with your actual GitHub repository name
+// UPDATED: Set base to '/' for custom domain (removed /webapp/)
 export default defineConfig({
   plugins: [react()],
-  base: '/webapp/', 
+  base: '/', 
 })
