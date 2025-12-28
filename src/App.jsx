@@ -26,10 +26,17 @@ import {
   Quote
 } from 'lucide-react';
 
+// --- CONFIGURATION ---
+// 1. Log in to https://formspree.io/
+// 2. Create a new form
+// 3. Paste your unique 8-digit Form ID here (e.g., "xrgopqkz")
+const FORMSPREE_ID = "mkonzjez"; 
+
+const BOOKING_LINK = "https://calendar.app.google/C5ZoCiQSXN2TaN3f9";
+
 // --- Sub-Page Components ---
 
 const Portfolio = ({ onBack, openBooking }) => {
-  // PLACEHOLDER REVIEWS - REPLACE THESE WITH YOUR REAL FIVERR TEXT
   const reviews = [
     {
       id: 1,
@@ -98,7 +105,7 @@ const Portfolio = ({ onBack, openBooking }) => {
         </div>
       </div>
 
-      {/* REVIEWS SECTION ADDED HERE */}
+      {/* Reviews */}
       <div className="mb-24">
         <h2 className="text-3xl font-bold text-white mb-10 text-center">Client Testimonials</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -137,7 +144,7 @@ const Portfolio = ({ onBack, openBooking }) => {
               <div className="text-sm text-blue-400 font-bold mb-2 uppercase tracking-wider">Migration & Architecture</div>
               <h3 className="text-2xl font-bold text-white mb-4">Zero-Downtime Office 365 Migration</h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting (GoDaddy), resulting in lost emails and sync issues. They feared data loss during a switch.
+                **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting, resulting in lost emails and sync issues. They feared data loss during a switch.
               </p>
               <p className="text-slate-400 mb-6 leading-relaxed">
                 **The Solution:** We architected a phased migration plan using IMAP sync tools. We configured Exchange Online, set up custom domains, and migrated 450GB of data over a weekend.
@@ -160,14 +167,13 @@ const Portfolio = ({ onBack, openBooking }) => {
               <div className="text-sm text-purple-400 font-bold mb-2 uppercase tracking-wider">Security & Compliance</div>
               <h3 className="text-2xl font-bold text-white mb-4">Fintech Security Hardening</h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing and unauthorized device access.
+                **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing.
               </p>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules to stop sensitive file sharing.
+                **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Passed external security audit with 0 critical flags.</li>
-                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Client secured $2M funding round.</li>
               </ul>
             </div>
           </div>
@@ -190,7 +196,6 @@ const Portfolio = ({ onBack, openBooking }) => {
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Onboarding time reduced from 4 hours to 5 minutes.</li>
-                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Saved HR 20+ hours per month.</li>
               </ul>
             </div>
           </div>
@@ -225,8 +230,8 @@ const PrivacyPolicy = ({ onBack }) => (
         <p>At CloudArtificial, we collect information necessary to provide IT managed services. This includes:</p>
         <ul className="list-disc ml-6 mt-2 space-y-1">
           <li>Contact information (Name, Email, Phone Number).</li>
-          <li>Technical details regarding your IT infrastructure (for audit and support purposes).</li>
-          <li>Login credentials (stored securely via encrypted vaults) for authorized administration.</li>
+          <li>Technical details regarding your IT infrastructure.</li>
+          <li>Login credentials (stored securely) for authorized administration.</li>
         </ul>
       </section>
 
@@ -242,7 +247,7 @@ const PrivacyPolicy = ({ onBack }) => (
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">3. Data Security</h2>
-        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties. Access to your systems is strictly limited to authorized support personnel.</p>
+        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties.</p>
       </section>
     </div>
   </div>
@@ -259,17 +264,17 @@ const TermsOfService = ({ onBack }) => (
       
       <section>
         <h2 className="text-xl font-bold text-white mb-3">1. Service Agreement</h2>
-        <p>By engaging CloudArtificial for IT support services, you agree to allow our technicians remote access to your designated systems for maintenance and troubleshooting purposes.</p>
+        <p>By engaging CloudArtificial for IT support services, you agree to allow our technicians remote access to your designated systems for maintenance purposes.</p>
       </section>
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">2. Service Level Objectives</h2>
-        <p>While we strive for 100% uptime, specific response times and availability guarantees are defined in your individual Service Level Agreement (SLA). We are not liable for outages caused by third-party providers (e.g., Microsoft, Google, ISP).</p>
+        <p>Specific response times and availability guarantees are defined in your individual Service Level Agreement (SLA).</p>
       </section>
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">3. Payment & Billing</h2>
-        <p>Managed services are billed monthly in advance. Project-based work (audits, migrations) is billed as per the agreed quote. Failure to pay may result in suspension of support services.</p>
+        <p>Managed services are billed monthly in advance. Project-based work is billed as per the agreed quote.</p>
       </section>
     </div>
   </div>
@@ -316,8 +321,6 @@ const App = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState('home'); 
 
-  const BOOKING_LINK = "https://calendar.app.google/C5ZoCiQSXN2TaN3f9";
-
   // Handle scroll effects for navbar
   useEffect(() => {
     const handleScroll = () => {
@@ -358,11 +361,11 @@ const App = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigateTo('home', 'hero')}>
-            {/* UPDATED LOGO: Badge Style (Circle + Border) - Fixes visibility issues */}
+            {/* Logo Image */}
             <img 
               src="CloudArtificial.png" 
               alt="CloudArtificial Logo" 
-              className="h-14 w-14 rounded-full border-2 border-slate-700/50 object-cover shadow-lg shadow-cyan-500/20 hover:scale-105 transition-transform" 
+              className="h-12 md:h-24 w-auto object-contain transition-transform hover:scale-105" 
             />
           </div>
 
@@ -410,7 +413,6 @@ const App = () => {
           <>
             {/* --- Hero Section --- */}
             <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-              {/* Abstract AI Background Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
                 <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse"></div>
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[100px]"></div>
@@ -451,7 +453,6 @@ const App = () => {
                 </div>
 
                 <div className="mt-16 pt-8 border-t border-slate-800/50 flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                  {/* Tech Stack Logos (Text representation for SVG simplicity) */}
                   <div className="flex items-center gap-2"><span className="font-bold text-xl text-white">Google</span> Workspace</div>
                   <div className="flex items-center gap-2"><span className="font-bold text-xl text-white">Microsoft</span> 365</div>
                   <div className="flex items-center gap-2"><span className="font-bold text-xl text-white">Azure</span> Cloud</div>
@@ -534,7 +535,6 @@ const App = () => {
             {/* --- AI Advantage Section --- */}
             <section id="ai-edge" className="py-24 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
-              {/* Decorative Grid */}
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
               
               <div className="container mx-auto px-6 relative z-10">
@@ -701,18 +701,25 @@ const App = () => {
                     </div>
                     
                     <div className="bg-slate-900 p-6 rounded-xl border border-slate-800">
-                      <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                      {/* UPDATED FORM: Sends data to Formspree, then redirects to Google Calendar.
+                        IMPORTANT: Replace "YOUR_FORM_ID_HERE" at the top of the file!
+                      */}
+                      <form action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST" className="space-y-4">
+                        {/* Hidden Inputs for Formspree Configuration */}
+                        <input type="hidden" name="_next" value={BOOKING_LINK} />
+                        <input type="hidden" name="_subject" value="New Website Lead: CloudArtificial" />
+                        
                         <div>
                           <label className="block text-sm text-slate-400 mb-1">Full Name</label>
-                          <input type="text" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John Doe" />
+                          <input type="text" name="name" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John Doe" required />
                         </div>
                         <div>
                           <label className="block text-sm text-slate-400 mb-1">Work Email</label>
-                          <input type="email" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@company.com" />
+                          <input type="email" name="email" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@company.com" required />
                         </div>
                         <div>
                           <label className="block text-sm text-slate-400 mb-1">How can we help?</label>
-                          <select className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                          <select name="service" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
                             <option>Microsoft 365 Support</option>
                             <option>Google Workspace Support</option>
                             <option>General IT Inquiry</option>
@@ -720,7 +727,7 @@ const App = () => {
                           </select>
                         </div>
                         <button 
-                          onClick={openBooking}
+                          type="submit"
                           className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
                         >
                           Book Free Consultation
@@ -742,11 +749,11 @@ const App = () => {
       <footer className="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            {/* Badge Style Logo */}
+            {/* Logo Image in Footer */}
             <img 
               src="CloudArtificial.png" 
               alt="CloudArtificial Logo" 
-              className="h-12 w-12 rounded-full border border-slate-800 object-cover" 
+              className="h-10 md:h-16 w-auto object-contain transition-transform hover:scale-105" 
             />
           </div>
           
