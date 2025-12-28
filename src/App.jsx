@@ -22,133 +22,194 @@ import {
   Star,
   Award,
   TrendingUp,
-  Briefcase
+  Briefcase,
+  Quote
 } from 'lucide-react';
 
 // --- Sub-Page Components ---
 
-const Portfolio = ({ onBack, openBooking }) => (
-  <div className="pt-32 pb-20 container mx-auto px-6 max-w-6xl min-h-screen">
-    <button onClick={onBack} className="flex items-center text-cyan-400 hover:text-cyan-300 mb-8 transition-colors">
-      <ChevronLeft className="w-4 h-4 mr-1" /> Back to Home
-    </button>
-    
-    <div className="text-center mb-16">
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6 backdrop-blur-sm">
-        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-        <span className="text-xs font-bold text-yellow-400 uppercase tracking-wide">Top Rated Expert</span>
-      </div>
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white">Proven Results.</h1>
-      <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-        We don't just promise uptime; we engineer it. See how we've helped businesses globally secure their infrastructure and scale without friction.
-      </p>
-    </div>
+const Portfolio = ({ onBack, openBooking }) => {
+  // PLACEHOLDER REVIEWS - REPLACE THESE WITH YOUR REAL FIVERR TEXT
+  const reviews = [
+    {
+      id: 1,
+      client: "Sarah Jenkins, CEO",
+      service: "Office 365 Migration",
+      text: "Absolutely phenomenal work. Migrated our entire agency (50+ users) from GoDaddy to Microsoft 365 over the weekend with ZERO downtime. Communication was top-tier.",
+      stars: 5
+    },
+    {
+      id: 2,
+      client: "TechFlow Solutions",
+      service: "Google Workspace Security",
+      text: "We were having major spam issues. CloudArtificial audited our DNS, set up SPF/DKIM properly, and secured our admin accounts. Highly recommended expert.",
+      stars: 5
+    },
+    {
+      id: 3,
+      client: "Marcus D.",
+      service: "IT Support / Helpdesk",
+      text: "Fastest response time I've seen on Fiverr. Fixed a critical SharePoint permission error that was halting our production in 20 minutes. Will hire again.",
+      stars: 5
+    },
+    {
+      id: 4,
+      client: "Global Logistics Co.",
+      service: "Azure Administration",
+      text: "A true professional. Managed our complex Azure AD connect setup and streamlined our user onboarding process. The scripting skills are impressive.",
+      stars: 5
+    }
+  ];
 
-    {/* Trust Stats */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-      <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
-        <div className="text-3xl font-bold text-white mb-2">500+</div>
-        <div className="text-sm text-slate-400">5-Star Reviews</div>
-      </div>
-      <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
-        <div className="text-3xl font-bold text-white mb-2">10k+</div>
-        <div className="text-sm text-slate-400">Users Managed</div>
-      </div>
-      <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
-        <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-        <div className="text-sm text-slate-400">Uptime Maintained</div>
-      </div>
-      <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
-        <div className="text-3xl font-bold text-white mb-2">24/7</div>
-        <div className="text-sm text-slate-400">Support Coverage</div>
-      </div>
-    </div>
-
-    {/* Case Studies */}
-    <div className="space-y-12">
-      
-      {/* Case Study 1 */}
-      <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-cyan-500/30 transition-all">
-        <div className="absolute top-8 right-8 p-3 rounded-full bg-blue-500/10 text-blue-400">
-          <Cloud className="w-6 h-6" />
-        </div>
-        <div className="flex flex-col md:flex-row gap-8 md:items-center">
-          <div className="flex-1">
-            <div className="text-sm text-blue-400 font-bold mb-2 uppercase tracking-wider">Migration & Architecture</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Zero-Downtime Office 365 Migration</h3>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting (GoDaddy), resulting in lost emails and sync issues. They feared data loss during a switch.
-            </p>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Solution:** We architected a phased migration plan using IMAP sync tools. We configured Exchange Online, set up custom domains, and migrated 450GB of data over a weekend.
-            </p>
-            <ul className="space-y-2 mb-8">
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> 100% Data Integrity retained.</li>
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Email reliability improved to 100%.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Case Study 2 */}
-      <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-purple-500/30 transition-all">
-        <div className="absolute top-8 right-8 p-3 rounded-full bg-purple-500/10 text-purple-400">
-          <ShieldCheck className="w-6 h-6" />
-        </div>
-        <div className="flex flex-col md:flex-row gap-8 md:items-center">
-          <div className="flex-1">
-            <div className="text-sm text-purple-400 font-bold mb-2 uppercase tracking-wider">Security & Compliance</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Fintech Security Hardening</h3>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing and unauthorized device access.
-            </p>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules to stop sensitive file sharing.
-            </p>
-            <ul className="space-y-2 mb-8">
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Passed external security audit with 0 critical flags.</li>
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Client secured $2M funding round.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Case Study 3 */}
-      <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-cyan-500/30 transition-all">
-        <div className="absolute top-8 right-8 p-3 rounded-full bg-cyan-500/10 text-cyan-400">
-          <Briefcase className="w-6 h-6" />
-        </div>
-        <div className="flex flex-col md:flex-row gap-8 md:items-center">
-          <div className="flex-1">
-            <div className="text-sm text-cyan-400 font-bold mb-2 uppercase tracking-wider">Automation & Helpdesk</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Remote Team Onboarding Automation</h3>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Challenge:** A marketing agency was spending 4 hours manually setting up accounts for every new hire, leading to delays and permission errors.
-            </p>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              **The Solution:** We built a custom PowerShell & API script. Now, filling one form automatically creates their O365 User, assigns licenses, adds them to Teams channels, and sends a welcome email.
-            </p>
-            <ul className="space-y-2 mb-8">
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Onboarding time reduced from 4 hours to 5 minutes.</li>
-              <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Saved HR 20+ hours per month.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div className="mt-20 text-center p-10 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 rounded-3xl border border-slate-700">
-      <h3 className="text-2xl font-bold text-white mb-4">Ready to be our next success story?</h3>
-      <button 
-        onClick={openBooking}
-        className="px-8 py-3 bg-white text-slate-950 rounded-full font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-white/10"
-      >
-        Book Your Free Audit
+  return (
+    <div className="pt-32 pb-20 container mx-auto px-6 max-w-6xl min-h-screen">
+      <button onClick={onBack} className="flex items-center text-cyan-400 hover:text-cyan-300 mb-8 transition-colors">
+        <ChevronLeft className="w-4 h-4 mr-1" /> Back to Home
       </button>
+      
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 mb-6 backdrop-blur-sm">
+          <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+          <span className="text-xs font-bold text-yellow-400 uppercase tracking-wide">Top Rated Expert</span>
+        </div>
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white">Proven Results.</h1>
+        <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          We don't just promise uptime; we engineer it. See how we've helped businesses globally secure their infrastructure and scale without friction.
+        </p>
+      </div>
+
+      {/* Trust Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
+          <div className="text-3xl font-bold text-white mb-2">500+</div>
+          <div className="text-sm text-slate-400">5-Star Reviews</div>
+        </div>
+        <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
+          <div className="text-3xl font-bold text-white mb-2">10k+</div>
+          <div className="text-sm text-slate-400">Users Managed</div>
+        </div>
+        <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
+          <div className="text-3xl font-bold text-white mb-2">99.9%</div>
+          <div className="text-sm text-slate-400">Uptime Maintained</div>
+        </div>
+        <div className="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 text-center">
+          <div className="text-3xl font-bold text-white mb-2">24/7</div>
+          <div className="text-sm text-slate-400">Support Coverage</div>
+        </div>
+      </div>
+
+      {/* REVIEWS SECTION ADDED HERE */}
+      <div className="mb-24">
+        <h2 className="text-3xl font-bold text-white mb-10 text-center">Client Testimonials</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {reviews.map((review) => (
+            <div key={review.id} className="bg-slate-900/40 p-8 rounded-2xl border border-slate-800 relative">
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-slate-700 opacity-50" />
+              <div className="flex gap-1 mb-4">
+                {[...Array(review.stars)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-slate-300 mb-6 italic">"{review.text}"</p>
+              <div>
+                <div className="font-bold text-white">{review.client}</div>
+                <div className="text-xs text-cyan-400 uppercase tracking-wide">{review.service}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <a href="#" className="text-slate-500 hover:text-white text-sm underline transition-colors">View all 500+ reviews on Fiverr</a>
+        </div>
+      </div>
+
+      {/* Case Studies */}
+      <div className="space-y-12">
+        <h2 className="text-3xl font-bold text-white mb-10 text-center">Featured Case Studies</h2>
+        
+        {/* Case Study 1 */}
+        <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-cyan-500/30 transition-all">
+          <div className="absolute top-8 right-8 p-3 rounded-full bg-blue-500/10 text-blue-400">
+            <Cloud className="w-6 h-6" />
+          </div>
+          <div className="flex flex-col md:flex-row gap-8 md:items-center">
+            <div className="flex-1">
+              <div className="text-sm text-blue-400 font-bold mb-2 uppercase tracking-wider">Migration & Architecture</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Zero-Downtime Office 365 Migration</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting (GoDaddy), resulting in lost emails and sync issues. They feared data loss during a switch.
+              </p>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Solution:** We architected a phased migration plan using IMAP sync tools. We configured Exchange Online, set up custom domains, and migrated 450GB of data over a weekend.
+              </p>
+              <ul className="space-y-2 mb-8">
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> 100% Data Integrity retained.</li>
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Email reliability improved to 100%.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Case Study 2 */}
+        <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-purple-500/30 transition-all">
+          <div className="absolute top-8 right-8 p-3 rounded-full bg-purple-500/10 text-purple-400">
+            <ShieldCheck className="w-6 h-6" />
+          </div>
+          <div className="flex flex-col md:flex-row gap-8 md:items-center">
+            <div className="flex-1">
+              <div className="text-sm text-purple-400 font-bold mb-2 uppercase tracking-wider">Security & Compliance</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Fintech Security Hardening</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing and unauthorized device access.
+              </p>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules to stop sensitive file sharing.
+              </p>
+              <ul className="space-y-2 mb-8">
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Passed external security audit with 0 critical flags.</li>
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Client secured $2M funding round.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Case Study 3 */}
+        <div className="group relative bg-slate-900/40 border border-slate-800 rounded-3xl p-8 md:p-12 hover:border-cyan-500/30 transition-all">
+          <div className="absolute top-8 right-8 p-3 rounded-full bg-cyan-500/10 text-cyan-400">
+            <Briefcase className="w-6 h-6" />
+          </div>
+          <div className="flex flex-col md:flex-row gap-8 md:items-center">
+            <div className="flex-1">
+              <div className="text-sm text-cyan-400 font-bold mb-2 uppercase tracking-wider">Automation & Helpdesk</div>
+              <h3 className="text-2xl font-bold text-white mb-4">Remote Team Onboarding Automation</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Challenge:** A marketing agency was spending 4 hours manually setting up accounts for every new hire, leading to delays and permission errors.
+              </p>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                **The Solution:** We built a custom PowerShell & API script. Now, filling one form automatically creates their O365 User, assigns licenses, adds them to Teams channels, and sends a welcome email.
+              </p>
+              <ul className="space-y-2 mb-8">
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Onboarding time reduced from 4 hours to 5 minutes.</li>
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Saved HR 20+ hours per month.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="mt-20 text-center p-10 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 rounded-3xl border border-slate-700">
+        <h3 className="text-2xl font-bold text-white mb-4">Ready to be our next success story?</h3>
+        <button 
+          onClick={openBooking}
+          className="px-8 py-3 bg-white text-slate-950 rounded-full font-bold hover:bg-cyan-50 transition-colors shadow-lg shadow-white/10"
+        >
+          Book Your Free Audit
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const PrivacyPolicy = ({ onBack }) => (
   <div className="pt-32 pb-20 container mx-auto px-6 max-w-4xl min-h-screen">
@@ -297,7 +358,7 @@ const App = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigateTo('home', 'hero')}>
-            {/* Badge Style Logo */}
+            {/* UPDATED LOGO: Badge Style (Circle + Border) - Fixes visibility issues */}
             <img 
               src="CloudArtificial.png" 
               alt="CloudArtificial Logo" 
