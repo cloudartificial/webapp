@@ -37,6 +37,7 @@ const BOOKING_LINK = "https://calendar.app.google/C5ZoCiQSXN2TaN3f9";
 // --- Sub-Page Components ---
 
 const Portfolio = ({ onBack, openBooking }) => {
+  // PLACEHOLDER REVIEWS - REPLACE THESE WITH YOUR REAL FIVERR TEXT
   const reviews = [
     {
       id: 1,
@@ -105,7 +106,7 @@ const Portfolio = ({ onBack, openBooking }) => {
         </div>
       </div>
 
-      {/* Reviews */}
+      {/* REVIEWS SECTION */}
       <div className="mb-24">
         <h2 className="text-3xl font-bold text-white mb-10 text-center">Client Testimonials</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -144,7 +145,7 @@ const Portfolio = ({ onBack, openBooking }) => {
               <div className="text-sm text-blue-400 font-bold mb-2 uppercase tracking-wider">Migration & Architecture</div>
               <h3 className="text-2xl font-bold text-white mb-4">Zero-Downtime Office 365 Migration</h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting, resulting in lost emails and sync issues. They feared data loss during a switch.
+                **The Challenge:** A logistics company with 65 employees was struggling with legacy email hosting (GoDaddy), resulting in lost emails and sync issues. They feared data loss during a switch.
               </p>
               <p className="text-slate-400 mb-6 leading-relaxed">
                 **The Solution:** We architected a phased migration plan using IMAP sync tools. We configured Exchange Online, set up custom domains, and migrated 450GB of data over a weekend.
@@ -167,13 +168,14 @@ const Portfolio = ({ onBack, openBooking }) => {
               <div className="text-sm text-purple-400 font-bold mb-2 uppercase tracking-wider">Security & Compliance</div>
               <h3 className="text-2xl font-bold text-white mb-4">Fintech Security Hardening</h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing.
+                **The Challenge:** A growing financial startup needed to meet strict compliance standards. Their Google Workspace was default-configured, leaving them vulnerable to phishing and unauthorized device access.
               </p>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules.
+                **The Solution:** We enforced Context-Aware Access levels, mandated Hardware Keys (2FA) for admin accounts, and set up DLP (Data Loss Prevention) rules to stop sensitive file sharing.
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Passed external security audit with 0 critical flags.</li>
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Client secured $2M funding round.</li>
               </ul>
             </div>
           </div>
@@ -196,6 +198,7 @@ const Portfolio = ({ onBack, openBooking }) => {
               </p>
               <ul className="space-y-2 mb-8">
                 <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Result:</span> Onboarding time reduced from 4 hours to 5 minutes.</li>
+                <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-green-500" /> <span className="font-bold text-white">Impact:</span> Saved HR 20+ hours per month.</li>
               </ul>
             </div>
           </div>
@@ -230,8 +233,8 @@ const PrivacyPolicy = ({ onBack }) => (
         <p>At CloudArtificial, we collect information necessary to provide IT managed services. This includes:</p>
         <ul className="list-disc ml-6 mt-2 space-y-1">
           <li>Contact information (Name, Email, Phone Number).</li>
-          <li>Technical details regarding your IT infrastructure.</li>
-          <li>Login credentials (stored securely) for authorized administration.</li>
+          <li>Technical details regarding your IT infrastructure (for audit and support purposes).</li>
+          <li>Login credentials (stored securely via encrypted vaults) for authorized administration.</li>
         </ul>
       </section>
 
@@ -247,7 +250,7 @@ const PrivacyPolicy = ({ onBack }) => (
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">3. Data Security</h2>
-        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties.</p>
+        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties. Access to your systems is strictly limited to authorized support personnel.</p>
       </section>
     </div>
   </div>
@@ -264,17 +267,17 @@ const TermsOfService = ({ onBack }) => (
       
       <section>
         <h2 className="text-xl font-bold text-white mb-3">1. Service Agreement</h2>
-        <p>By engaging CloudArtificial for IT support services, you agree to allow our technicians remote access to your designated systems for maintenance purposes.</p>
+        <p>By engaging CloudArtificial for IT support services, you agree to allow our technicians remote access to your designated systems for maintenance and troubleshooting purposes.</p>
       </section>
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">2. Service Level Objectives</h2>
-        <p>Specific response times and availability guarantees are defined in your individual Service Level Agreement (SLA).</p>
+        <p>While we strive for 100% uptime, specific response times and availability guarantees are defined in your individual Service Level Agreement (SLA). We are not liable for outages caused by third-party providers (e.g., Microsoft, Google, ISP).</p>
       </section>
 
       <section>
         <h2 className="text-xl font-bold text-white mb-3">3. Payment & Billing</h2>
-        <p>Managed services are billed monthly in advance. Project-based work is billed as per the agreed quote.</p>
+        <p>Managed services are billed monthly in advance. Project-based work (audits, migrations) is billed as per the agreed quote. Failure to pay may result in suspension of support services.</p>
       </section>
     </div>
   </div>
@@ -320,6 +323,7 @@ const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState('home'); 
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Handle scroll effects for navbar
   useEffect(() => {
@@ -350,6 +354,35 @@ const App = () => {
     window.open(BOOKING_LINK, '_blank');
   };
 
+  // --- NEW FORM SUBMISSION HANDLER ---
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Success! Redirect directly to Google Calendar
+        window.location.href = BOOKING_LINK;
+      } else {
+        alert("There was a problem sending your message. Please try again.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      alert("Error connecting to form service. Please try again.");
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-white overflow-x-hidden flex flex-col justify-between">
       
@@ -361,7 +394,7 @@ const App = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigateTo('home', 'hero')}>
-            {/* Logo Image */}
+            {/* Logo Image - Responsive Size */}
             <img 
               src="CloudArtificial.png" 
               alt="CloudArtificial Logo" 
@@ -472,18 +505,12 @@ const App = () => {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
-                  {/* Service 1 */}
+                  {/* Service Cards (Repeated for brevity, keeping existing structure) */}
                   <div className="group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <Database className="w-24 h-24" />
-                    </div>
-                    <div className="w-12 h-12 rounded-lg bg-blue-900/30 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform">
-                      <Cloud className="w-6 h-6" />
-                    </div>
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Database className="w-24 h-24" /></div>
+                    <div className="w-12 h-12 rounded-lg bg-blue-900/30 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform"><Cloud className="w-6 h-6" /></div>
                     <h3 className="text-xl font-bold mb-4">Microsoft 365 Managed Support</h3>
-                    <p className="text-slate-400 mb-6 leading-relaxed">
-                      Complete administration of your O365 tenant. We handle user provisioning, SharePoint permissions, and Teams governance.
-                    </p>
+                    <p className="text-slate-400 mb-6 leading-relaxed">Complete administration of your O365 tenant. We handle user provisioning, SharePoint permissions, and Teams governance.</p>
                     <ul className="space-y-2 mb-8">
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-cyan-500" /> License Optimization</li>
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-cyan-500" /> Exchange Online Management</li>
@@ -491,18 +518,11 @@ const App = () => {
                     </ul>
                   </div>
 
-                  {/* Service 2 */}
                   <div className="group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-orange-500/50 transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <Server className="w-24 h-24" />
-                    </div>
-                    <div className="w-12 h-12 rounded-lg bg-orange-900/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 transition-transform">
-                      <Users className="w-6 h-6" />
-                    </div>
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Server className="w-24 h-24" /></div>
+                    <div className="w-12 h-12 rounded-lg bg-orange-900/30 flex items-center justify-center mb-6 text-orange-400 group-hover:scale-110 transition-transform"><Users className="w-6 h-6" /></div>
                     <h3 className="text-xl font-bold mb-4">Google Workspace Admin</h3>
-                    <p className="text-slate-400 mb-6 leading-relaxed">
-                      Streamline your collaborative workflow. We configure Gmail DNS (SPF/DKIM), manage Drive shared units, and secure your devices.
-                    </p>
+                    <p className="text-slate-400 mb-6 leading-relaxed">Streamline your collaborative workflow. We configure Gmail DNS (SPF/DKIM), manage Drive shared units, and secure your devices.</p>
                     <ul className="space-y-2 mb-8">
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-orange-500" /> Seamless Migrations</li>
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-orange-500" /> Group Policy Management</li>
@@ -510,18 +530,11 @@ const App = () => {
                     </ul>
                   </div>
 
-                  {/* Service 3 */}
                   <div className="group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-[0_0_30px_rgba(168,85,247,0.1)] relative overflow-hidden">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                      <ShieldCheck className="w-24 h-24" />
-                    </div>
-                    <div className="w-12 h-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
-                      <ShieldCheck className="w-6 h-6" />
-                    </div>
+                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><ShieldCheck className="w-24 h-24" /></div>
+                    <div className="w-12 h-12 rounded-lg bg-purple-900/30 flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform"><ShieldCheck className="w-6 h-6" /></div>
                     <h3 className="text-xl font-bold mb-4">Cybersecurity & Support</h3>
-                    <p className="text-slate-400 mb-6 leading-relaxed">
-                      24/7 monitoring of your endpoints and cloud identities. We act as your remote IT helpdesk, solving issues before they disrupt your team.
-                    </p>
+                    <p className="text-slate-400 mb-6 leading-relaxed">24/7 monitoring of your endpoints and cloud identities. We act as your remote IT helpdesk, solving issues before they disrupt your team.</p>
                     <ul className="space-y-2 mb-8">
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500" /> Threat Detection</li>
                       <li className="flex items-center gap-2 text-sm text-slate-300"><CheckCircle className="w-4 h-4 text-purple-500" /> Backup & Disaster Recovery</li>
@@ -540,85 +553,40 @@ const App = () => {
               <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                   <div className="lg:w-1/2">
-                    <div className="inline-block px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-700/50 text-cyan-400 text-sm font-bold mb-6">
-                      THE ARTIFICIAL INTELLIGENCE EDGE
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                      IT Support that <br />
-                      <span className="text-cyan-400">Thinks Ahead</span>
-                    </h2>
-                    <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                      We don't just fix broken printers. CloudArtificial integrates AI-driven monitoring tools into your stack to predict failures, automate routine maintenance, and detect security anomalies instantly.
-                    </p>
-                    
+                    <div className="inline-block px-3 py-1 rounded-full bg-cyan-900/30 border border-cyan-700/50 text-cyan-400 text-sm font-bold mb-6">THE ARTIFICIAL INTELLIGENCE EDGE</div>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">IT Support that <br /><span className="text-cyan-400">Thinks Ahead</span></h2>
+                    <p className="text-slate-400 text-lg mb-8 leading-relaxed">We don't just fix broken printers. CloudArtificial integrates AI-driven monitoring tools into your stack to predict failures, automate routine maintenance, and detect security anomalies instantly.</p>
                     <div className="space-y-6">
                       <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
-                          <Zap className="w-6 h-6 text-yellow-400" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg">Predictive Maintenance</h4>
-                          <p className="text-slate-500 text-sm">AI algorithms analyze server logs to identify hardware risks before they cause downtime.</p>
-                        </div>
+                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700"><Zap className="w-6 h-6 text-yellow-400" /></div>
+                        <div><h4 className="font-bold text-lg">Predictive Maintenance</h4><p className="text-slate-500 text-sm">AI algorithms analyze server logs to identify hardware risks before they cause downtime.</p></div>
                       </div>
-                      
                       <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
-                          <Cpu className="w-6 h-6 text-cyan-400" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg">Automated Onboarding</h4>
-                          <p className="text-slate-500 text-sm">Smart scripts provision new user accounts across all your platforms in seconds, not hours.</p>
-                        </div>
+                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700"><Cpu className="w-6 h-6 text-cyan-400" /></div>
+                        <div><h4 className="font-bold text-lg">Automated Onboarding</h4><p className="text-slate-500 text-sm">Smart scripts provision new user accounts across all your platforms in seconds, not hours.</p></div>
                       </div>
-
                       <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
-                          <BarChart className="w-6 h-6 text-green-400" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-lg">Cost Intelligence</h4>
-                          <p className="text-slate-500 text-sm">We analyze your cloud usage patterns to identify unused licenses and wasted resources.</p>
-                        </div>
+                        <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700"><BarChart className="w-6 h-6 text-green-400" /></div>
+                        <div><h4 className="font-bold text-lg">Cost Intelligence</h4><p className="text-slate-500 text-sm">We analyze your cloud usage patterns to identify unused licenses and wasted resources.</p></div>
                       </div>
                     </div>
                   </div>
-
                   <div className="lg:w-1/2 relative">
                     <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-slate-700 rounded-2xl p-8 shadow-2xl">
                       <div className="flex items-center gap-4 border-b border-slate-700 pb-4 mb-4">
-                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-red-500"></div><div className="w-3 h-3 rounded-full bg-yellow-500"></div><div className="w-3 h-3 rounded-full bg-green-500"></div>
                         <span className="text-xs text-slate-500 ml-auto font-mono">cloud-monitor.exe</span>
                       </div>
                       <div className="font-mono text-sm space-y-3">
-                        <div className="flex justify-between text-slate-400">
-                          <span>System Status:</span>
-                          <span className="text-green-400">OPTIMAL</span>
-                        </div>
-                        <div className="flex justify-between text-slate-400">
-                          <span>Threat Level:</span>
-                          <span className="text-cyan-400">LOW</span>
-                        </div>
+                        <div className="flex justify-between text-slate-400"><span>System Status:</span><span className="text-green-400">OPTIMAL</span></div>
+                        <div className="flex justify-between text-slate-400"><span>Threat Level:</span><span className="text-cyan-400">LOW</span></div>
                         <div className="h-px bg-slate-800 my-2"></div>
-                        <div className="text-slate-500">
-                          <span className="text-blue-500">➜</span> Analyzing Exchange Logs... <span className="text-green-500">Done (0.4s)</span>
-                        </div>
-                        <div className="text-slate-500">
-                          <span className="text-blue-500">➜</span> Detecting Login Anomalies... <span className="text-green-500">0 found</span>
-                        </div>
-                        <div className="text-slate-500">
-                          <span className="text-blue-500">➜</span> Optimizing SharePoint Storage... <span className="text-yellow-500">Archived 24GB</span>
-                        </div>
-                        <div className="mt-4 p-3 bg-cyan-900/20 border border-cyan-800/50 rounded text-cyan-200">
-                          <Zap className="w-4 h-4 inline mr-2" />
-                          AI Recommendation: 3 Unused O365 Licenses detected. Remove to save $72/mo.
-                        </div>
+                        <div className="text-slate-500"><span className="text-blue-500">➜</span> Analyzing Exchange Logs... <span className="text-green-500">Done (0.4s)</span></div>
+                        <div className="text-slate-500"><span className="text-blue-500">➜</span> Detecting Login Anomalies... <span className="text-green-500">0 found</span></div>
+                        <div className="text-slate-500"><span className="text-blue-500">➜</span> Optimizing SharePoint Storage... <span className="text-yellow-500">Archived 24GB</span></div>
+                        <div className="mt-4 p-3 bg-cyan-900/20 border border-cyan-800/50 rounded text-cyan-200"><Zap className="w-4 h-4 inline mr-2" /> AI Recommendation: 3 Unused O365 Licenses detected. Remove to save $72/mo.</div>
                       </div>
                     </div>
-                    
-                    {/* Background glows behind the code card */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl -z-10"></div>
                   </div>
                 </div>
@@ -629,33 +597,25 @@ const App = () => {
             <section id="process" className="py-24 bg-slate-950">
               <div className="container mx-auto px-6 text-center">
                 <h2 className="text-3xl md:text-5xl font-bold mb-16">The CloudArtificial Protocol</h2>
-                
                 <div className="grid md:grid-cols-4 gap-8">
                   <div className="relative">
                     <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center font-bold text-2xl text-cyan-400 mb-6 border border-slate-700 shadow-[0_0_15px_rgba(6,182,212,0.3)] z-10 relative">1</div>
                     <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-800 -z-0"></div>
-                    <h3 className="text-xl font-bold mb-2">Audit</h3>
-                    <p className="text-slate-400 text-sm">We scan your current infrastructure for security gaps and inefficiencies.</p>
+                    <h3 className="text-xl font-bold mb-2">Audit</h3><p className="text-slate-400 text-sm">We scan your current infrastructure for security gaps and inefficiencies.</p>
                   </div>
-                  
                   <div className="relative">
                     <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center font-bold text-2xl text-cyan-400 mb-6 border border-slate-700 z-10 relative">2</div>
                     <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-800 -z-0"></div>
-                    <h3 className="text-xl font-bold mb-2">Migrate</h3>
-                    <p className="text-slate-400 text-sm">Seamless transition to the cloud with zero data loss or downtime.</p>
+                    <h3 className="text-xl font-bold mb-2">Migrate</h3><p className="text-slate-400 text-sm">Seamless transition to the cloud with zero data loss or downtime.</p>
                   </div>
-                  
                   <div className="relative">
                     <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center font-bold text-2xl text-cyan-400 mb-6 border border-slate-700 z-10 relative">3</div>
                     <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-slate-800 -z-0"></div>
-                    <h3 className="text-xl font-bold mb-2">Secure</h3>
-                    <p className="text-slate-400 text-sm">Implementation of MFA, conditional access, and threat protection policies.</p>
+                    <h3 className="text-xl font-bold mb-2">Secure</h3><p className="text-slate-400 text-sm">Implementation of MFA, conditional access, and threat protection policies.</p>
                   </div>
-                  
                   <div className="relative">
                     <div className="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center font-bold text-2xl text-cyan-400 mb-6 border border-slate-700 z-10 relative">4</div>
-                    <h3 className="text-xl font-bold mb-2">Manage</h3>
-                    <p className="text-slate-400 text-sm">Ongoing AI-assisted support and monthly optimization reports.</p>
+                    <h3 className="text-xl font-bold mb-2">Manage</h3><p className="text-slate-400 text-sm">Ongoing AI-assisted support and monthly optimization reports.</p>
                   </div>
                 </div>
               </div>
@@ -669,46 +629,18 @@ const App = () => {
                   <div className="grid md:grid-cols-2 gap-12">
                     <div>
                       <h2 className="text-3xl font-bold mb-6">Ready to upgrade your IT?</h2>
-                      <p className="text-slate-300 mb-8">
-                        Book a free 15-minute consultation. We'll discuss your current setup, pain points, and how our managed services can save you time and money.
-                      </p>
-                      
+                      <p className="text-slate-300 mb-8">Book a free 15-minute consultation. We'll discuss your current setup, pain points, and how our managed services can save you time and money.</p>
                       <div className="space-y-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Mail className="w-5 h-5"/></div>
-                          <div>
-                            <div className="text-xs text-slate-500 uppercase">Email Us</div>
-                            <div className="font-medium text-white">hello@cloudartificial.com</div>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Phone className="w-5 h-5"/></div>
-                          <div>
-                            <div className="text-xs text-slate-500 uppercase">Call Us</div>
-                            <div className="font-medium text-white">+92 318 1620606</div>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Globe className="w-5 h-5"/></div>
-                          <div>
-                            <div className="text-xs text-slate-500 uppercase">Global Service</div>
-                            <div className="font-medium text-white">Remote Support Worldwide</div>
-                          </div>
-                        </div>
+                        <div className="flex items-center gap-4"><div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Mail className="w-5 h-5"/></div><div><div className="text-xs text-slate-500 uppercase">Email Us</div><div className="font-medium text-white">hello@cloudartificial.com</div></div></div>
+                        <div className="flex items-center gap-4"><div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Phone className="w-5 h-5"/></div><div><div className="text-xs text-slate-500 uppercase">Call Us</div><div className="font-medium text-white">+92 318 1620606</div></div></div>
+                        <div className="flex items-center gap-4"><div className="w-10 h-10 rounded bg-slate-800 flex items-center justify-center text-cyan-400"><Globe className="w-5 h-5"/></div><div><div className="text-xs text-slate-500 uppercase">Global Service</div><div className="font-medium text-white">Remote Support Worldwide</div></div></div>
                       </div>
                     </div>
                     
                     <div className="bg-slate-900 p-6 rounded-xl border border-slate-800">
-                      {/* UPDATED FORM: Sends data to Formspree, then redirects to Google Calendar.
-                        IMPORTANT: Replace "YOUR_FORM_ID_HERE" at the top of the file!
-                      */}
-                      <form action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST" className="space-y-4">
-                        {/* Hidden Inputs for Formspree Configuration */}
-                        <input type="hidden" name="_next" value={BOOKING_LINK} />
-                        <input type="hidden" name="_subject" value="New Website Lead: CloudArtificial" />
-                        
+                      {/* --- CUSTOM FORM HANDLER --- */}
+                      <form onSubmit={handleContactSubmit} className="space-y-4">
+                        {/* No hidden inputs needed for this method, handled in JS */}
                         <div>
                           <label className="block text-sm text-slate-400 mb-1">Full Name</label>
                           <input type="text" name="name" className="w-full bg-slate-800 border border-slate-700 rounded p-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John Doe" required />
@@ -728,9 +660,10 @@ const App = () => {
                         </div>
                         <button 
                           type="submit"
-                          className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
+                          disabled={isSubmitting}
+                          className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded font-bold text-white hover:opacity-90 transition-opacity shadow-lg disabled:opacity-50"
                         >
-                          Book Free Consultation
+                          {isSubmitting ? 'Sending...' : 'Book Free Consultation'}
                         </button>
                         <p className="text-xs text-center text-slate-500 mt-4">
                           No credit card required. Zero obligation.
@@ -749,7 +682,6 @@ const App = () => {
       <footer className="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            {/* Logo Image in Footer */}
             <img 
               src="CloudArtificial.png" 
               alt="CloudArtificial Logo" 
