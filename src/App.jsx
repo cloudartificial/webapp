@@ -446,12 +446,12 @@ const App = () => {
         )}
       </nav>
 
-      {/* --- Main Content Switcher --- */}
+{/* --- Main Content Switcher --- */}
       <main className="flex-grow">
-        {currentView === 'privacy' && <PrivacyPolicy onBack={() => navigateTo('home')} />}
-        {currentView === 'terms' && <TermsOfService onBack={() => navigateTo('home')} />}
-        {currentView === 'sitemap' && <Sitemap onBack={() => navigateTo('home')} onNavigate={navigateTo} />}
-        {currentView === 'portfolio' && <Portfolio onBack={() => navigateTo('home')} openBooking={openBooking} />}
+        {currentView === 'privacy' && <PrivacyPolicy onBack={() => navigateTo('home', 'hero')} />}
+        {currentView === 'terms' && <TermsOfService onBack={() => navigateTo('home', 'hero')} />}
+        {currentView === 'sitemap' && <Sitemap onBack={() => navigateTo('home', 'hero')} onNavigate={navigateTo} />}
+        {currentView === 'portfolio' && <Portfolio onBack={() => navigateTo('home', 'hero')} openBooking={openBooking} />}
         
         {currentView === 'home' && (
           <>
