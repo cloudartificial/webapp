@@ -130,10 +130,10 @@ const Portfolio = ({ onBack, openBooking }) => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <a href="#" className="text-slate-500 hover:text-white text-sm underline transition-colors">View all 500+ reviews on our profiles</a>
+          <a href="https://www.fiverr.com/s/WeZE1yQ" className="text-slate-500 hover:text-white text-sm underline transition-colors">View all 500+ reviews on our profiles</a>
         </div>
       </div>
-
+      
       {/* Case Studies */}
       <div className="space-y-12">
         <h2 className="text-3xl font-bold text-white mb-10 text-center">Featured Case Studies</h2>
@@ -228,31 +228,31 @@ const PrivacyPolicy = ({ onBack }) => (
     </button>
     <h1 className="text-4xl font-bold mb-8 text-white">Privacy Policy</h1>
     <div className="space-y-6 text-slate-300 bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
-      <p className="text-sm text-slate-500">Last Updated: July 2026</p>
+      <p className="text-sm text-slate-500">Last Updated: August 2026</p>
       
       <section>
         <h2 className="text-xl font-bold text-white mb-3">1. Information We Collect</h2>
-        <p>At CloudArtificial, we collect information necessary to provide IT, Marketing, and Development services. This includes:</p>
+        <p>At CloudArtificial, we collect information necessary to provide IT, Marketing, CRM, and Development services. This includes:</p>
         <ul className="list-disc ml-6 mt-2 space-y-1">
           <li>Contact information (Name, Email, Phone Number).</li>
-          <li>Technical details regarding your IT infrastructure and CRM systems.</li>
-          <li>Login credentials (stored securely) for authorized administration and development.</li>
+          <li>Technical details regarding your IT infrastructure and web presence.</li>
+          <li>Login credentials (stored securely) for authorized administration of CRMs (HubSpot, GHL, Salesforce), Google Workspace, and M365.</li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-white mb-3">2. How We Use Your Data</h2>
-        <p>We use your data solely for:</p>
-        <ul className="list-disc ml-6 mt-2 space-y-1">
-          <li>Managing Cloud systems, CRM platforms (HubSpot/Salesforce), and software development.</li>
-          <li>Executing digital marketing and outbound campaigns on your behalf.</li>
-          <li>Billing and account management.</li>
-        </ul>
+        <h2 className="text-xl font-bold text-white mb-3">2. CRM & Data Processing</h2>
+        <p>When providing CRM implementation and marketing automation services, CloudArtificial acts as a "Data Processor." We do not own, sell, or distribute your customer lists, lead data, or proprietary business information stored within your CRM platforms.</p>
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-white mb-3">3. Data Security</h2>
-        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties.</p>
+        <h2 className="text-xl font-bold text-white mb-3">3. Marketing Analytics & Tracking</h2>
+        <p>For clients engaging in our digital marketing services, we may implement tracking pixels, cookies, and analytics tools (e.g., Google Analytics) on your digital properties to measure campaign performance. We ensure these practices adhere to standard digital privacy guidelines.</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-white mb-3">4. Data Security</h2>
+        <p>We employ enterprise-grade encryption for all stored data. We do not sell your personal or business data to third parties. Access to your systems is strictly limited to authorized agency personnel.</p>
       </section>
     </div>
   </div>
@@ -265,21 +265,31 @@ const TermsOfService = ({ onBack }) => (
     </button>
     <h1 className="text-4xl font-bold mb-8 text-white">Terms of Service</h1>
     <div className="space-y-6 text-slate-300 bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
-      <p className="text-sm text-slate-500">Last Updated: July 2026</p>
+      <p className="text-sm text-slate-500">Last Updated: August 2026</p>
       
       <section>
         <h2 className="text-xl font-bold text-white mb-3">1. Service Agreement</h2>
-        <p>By engaging CloudArtificial, you agree to allow our team remote access to your designated systems for IT maintenance, software deployment, CRM administration, and marketing purposes.</p>
+        <p>By engaging CloudArtificial for IT support, CRM implementation, marketing, or software development, you agree to allow our team authorized access to your designated systems for project execution and maintenance.</p>
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-white mb-3">2. Service Level Objectives</h2>
-        <p>Specific response times, development milestones, and marketing deliverables are defined in your individual Service Level Agreement (SLA) or Scope of Work (SOW).</p>
+        <h2 className="text-xl font-bold text-white mb-3">2. Third-Party Software & CRM Subscriptions</h2>
+        <p>CloudArtificial provides implementation and management services. The client remains solely responsible for the licensing costs, subscription fees, and adherence to the terms of service of third-party platforms (including but not limited to HubSpot, Salesforce, GoHighLevel, Microsoft, and Google).</p>
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-white mb-3">3. Payment & Billing</h2>
-        <p>Managed services and marketing retainers are billed monthly in advance. Project-based work (app development, CRM setups) is billed as per the agreed milestone schedule.</p>
+        <h2 className="text-xl font-bold text-white mb-3">3. Development & Intellectual Property (IP)</h2>
+        <p>For custom AI, Web, and App development projects, all intellectual property rights to the final code and deliverables transfer to the client only upon complete and final payment of the project invoice. CloudArtificial retains the right to use non-sensitive project outcomes as portfolio case studies unless otherwise agreed in a Non-Disclosure Agreement (NDA).</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-white mb-3">4. Marketing & SEO Disclaimer</h2>
+        <p>While CloudArtificial utilizes industry best practices for Digital Marketing and SEO, search engine algorithms and market conditions are outside our control. Therefore, we cannot guarantee specific search rankings, traffic volumes, or financial ROI from marketing campaigns.</p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold text-white mb-3">5. Payment & Billing</h2>
+        <p>Managed IT and Marketing retainers are billed monthly in advance. Project-based work (Development, CRM Implementation) is billed as per the agreed quote and milestone schedule. Failure to pay may result in a suspension of services.</p>
       </section>
     </div>
   </div>
@@ -294,15 +304,15 @@ const Sitemap = ({ onBack, onNavigate }) => (
     <div className="grid md:grid-cols-2 gap-8">
       <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
         <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-          <Globe className="w-5 h-5 text-cyan-500" /> Main Pages
+          <Globe className="w-5 h-5 text-cyan-500" /> Agency Pages
         </h2>
         <ul className="space-y-4">
           <li><button onClick={() => onNavigate('home', 'hero')} className="text-slate-300 hover:text-cyan-400">Home</button></li>
-          <li><button onClick={() => onNavigate('home', 'services')} className="text-slate-300 hover:text-cyan-400">Services & Expertise</button></li>
-          <li><button onClick={() => onNavigate('home', 'ai-edge')} className="text-slate-300 hover:text-cyan-400">AI Advantage</button></li>
+          <li><button onClick={() => onNavigate('home', 'services')} className="text-slate-300 hover:text-cyan-400">Full-Service Capabilities (IT, CRM, Dev, Marketing)</button></li>
+          <li><button onClick={() => onNavigate('home', 'ai-edge')} className="text-slate-300 hover:text-cyan-400">The AI Edge</button></li>
           <li><button onClick={() => onNavigate('portfolio')} className="text-slate-300 hover:text-cyan-400">Portfolio & Case Studies</button></li>
-          <li><button onClick={() => onNavigate('home', 'process')} className="text-slate-300 hover:text-cyan-400">Our Process</button></li>
-          <li><button onClick={() => onNavigate('home', 'contact')} className="text-slate-300 hover:text-cyan-400">Contact / Booking</button></li>
+          <li><button onClick={() => onNavigate('home', 'process')} className="text-slate-300 hover:text-cyan-400">Our Protocol</button></li>
+          <li><button onClick={() => onNavigate('home', 'contact')} className="text-slate-300 hover:text-cyan-400">Contact / Book Audit</button></li>
         </ul>
       </div>
       
