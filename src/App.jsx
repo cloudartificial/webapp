@@ -307,12 +307,13 @@ const Sitemap = ({ onBack, onNavigate }) => (
           <Globe className="w-5 h-5 text-cyan-500" /> Agency Pages
         </h2>
         <ul className="space-y-4">
-          <li><button onClick={() => onNavigate('home', 'hero')} className="text-slate-300 hover:text-cyan-400">Home</button></li>
-          <li><button onClick={() => onNavigate('home', 'services')} className="text-slate-300 hover:text-cyan-400">Full-Service Capabilities (IT, CRM, Dev, Marketing)</button></li>
-          <li><button onClick={() => onNavigate('home', 'ai-edge')} className="text-slate-300 hover:text-cyan-400">The AI Edge</button></li>
-          <li><button onClick={() => onNavigate('portfolio')} className="text-slate-300 hover:text-cyan-400">Portfolio & Case Studies</button></li>
-          <li><button onClick={() => onNavigate('home', 'process')} className="text-slate-300 hover:text-cyan-400">Our Protocol</button></li>
-          <li><button onClick={() => onNavigate('home', 'contact')} className="text-slate-300 hover:text-cyan-400">Contact / Book Audit</button></li>
+          {/* Added 'text-left' to all buttons to prevent center-alignment on wrapping text */}
+          <li><button onClick={() => onNavigate('home', 'hero')} className="text-slate-300 hover:text-cyan-400 text-left">Home</button></li>
+          <li><button onClick={() => onNavigate('home', 'services')} className="text-slate-300 hover:text-cyan-400 text-left">Full-Service Capabilities (IT, CRM, Dev, Marketing)</button></li>
+          <li><button onClick={() => onNavigate('home', 'ai-edge')} className="text-slate-300 hover:text-cyan-400 text-left">The AI Edge</button></li>
+          <li><button onClick={() => onNavigate('portfolio')} className="text-slate-300 hover:text-cyan-400 text-left">Portfolio & Case Studies</button></li>
+          <li><button onClick={() => onNavigate('home', 'process')} className="text-slate-300 hover:text-cyan-400 text-left">Our Protocol</button></li>
+          <li><button onClick={() => onNavigate('home', 'contact')} className="text-slate-300 hover:text-cyan-400 text-left">Contact / Book Audit</button></li>
         </ul>
       </div>
       
@@ -321,8 +322,8 @@ const Sitemap = ({ onBack, onNavigate }) => (
           <FileText className="w-5 h-5 text-purple-500" /> Legal & Info
         </h2>
         <ul className="space-y-4">
-          <li><button onClick={() => onNavigate('privacy')} className="text-slate-300 hover:text-cyan-400">Privacy Policy</button></li>
-          <li><button onClick={() => onNavigate('terms')} className="text-slate-300 hover:text-cyan-400">Terms of Service</button></li>
+          <li><button onClick={() => onNavigate('privacy')} className="text-slate-300 hover:text-cyan-400 text-left">Privacy Policy</button></li>
+          <li><button onClick={() => onNavigate('terms')} className="text-slate-300 hover:text-cyan-400 text-left">Terms of Service</button></li>
         </ul>
       </div>
     </div>
